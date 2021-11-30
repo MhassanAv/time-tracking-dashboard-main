@@ -1,0 +1,208 @@
+*,*::before,*::after{
+
+    /*Primary*/
+    
+    --Blue: hsl(246, 80%, 60%);
+    --Lightredwork: hsl(15, 100%, 70%);
+    --Softblueplay: hsl(195, 74%, 62%);
+    --Lightredstudy: hsl(348, 100%, 68%);
+    --Limegreenexercise: hsl(145, 58%, 55%);
+    --Violetsocial: hsl(264, 64%, 52%);
+    --Softorangeselfcare: hsl(43, 84%, 65%);
+    /*Neutral*/
+    --Verydarkblue: hsl(226, 43%, 10%);
+    --Darkblue: hsl(235, 46%, 20%);
+    --Desaturatedblue: hsl(235, 45%, 61%);
+    --PaleBlue: hsl(236, 100%, 87%);
+
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Verydarkblue);
+    color: var(--PaleBlue);
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.herocard{
+    /*border: 1px solid #fff;*/
+    border-radius: 1rem;
+    grid-row: span 2;
+    background-color: var(--Darkblue);
+
+}
+.herocard ul{
+    cursor: pointer;
+    list-style: none;
+    line-height: 2.5rem;
+    color: var(--Desaturatedblue);
+}
+.herocard ul li{
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+}
+.active{
+    color: var(--PaleBlue);
+}
+
+.herocard ul li:hover,.herocard ul li:focus{
+    color: var(--PaleBlue);
+}
+.hero-avatar{
+    width: 100%;
+    height:60%;
+    color: var(--PaleBlue);
+    background-color: var(--Blue);
+    border-radius: 1rem;
+}
+.hero-avatar p{
+    padding-left: 40px;
+    margin: 0;
+    text-align: left;
+    color: var(--PaleBlue);
+}
+.hero-avatar h3{
+    display: inline-block;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    line-height:3rem;
+    padding: 0;
+    margin: 0;
+    padding-left: 40px;
+    padding-top: 0.5rem;
+
+}
+.herocard img{
+    cursor: pointer;
+    height: 5rem;
+    width: 5rem;
+    margin: 1.5rem;
+    border: 0.2rem solid #fff;
+    border-radius: 50%;
+}
+.container{
+    /*border: 1px solid #fff;*/
+    display: grid;
+    position: absolute;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1.3rem;
+    width: 75%;
+    height: 30rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card {
+ /*border: 1px solid #fff;*/
+ border-radius: 1rem;
+ position: relative;
+}
+
+.work::before{
+    border-radius: 1rem;
+    position: absolute;
+    content: "";
+    background: url(images/icon-work.svg) 90% -15% no-repeat;
+    background-color: var(--Lightredwork);
+    width: 100%;
+    height:50%;
+    
+    
+}
+.play::before{
+    border-radius: 1rem;
+    position: absolute;
+    content: "";
+    background: url(images/icon-play.svg) 90% -15% no-repeat;
+    background-color: var(--Softblueplay);
+    width: 100%;
+    height:50%;
+    
+}
+.social::before{
+    border-radius: 1rem;
+    position: absolute;
+    content: "";
+    background: url(images/icon-social.svg) 90% -60% no-repeat;
+    background-color: var(--Violetsocial);
+    width: 100%;
+    height:50%;
+    
+}
+.selfcare::before{
+    border-radius: 1rem;
+    position: absolute;
+    content: "";
+    background: url(images/icon-self-care.svg) 90% -15% no-repeat;
+    background-color: var(--Softorangeselfcare);
+    width: 100%;
+    height:50%;
+    
+}
+.exercise::before{
+    border-radius: 1rem;
+    position: absolute;
+    content: "";
+    background: url(images/icon-exercise.svg) 90% -5% no-repeat;
+    background-color: var(--Limegreenexercise);
+    width: 100%;
+    height:50%;
+}
+.study::before{
+    border-radius: 1rem;
+    position: absolute;
+    content: "";
+    background: url(images/icon-study.svg) 90% -15% no-repeat;
+    background-color: var(--Lightredstudy);
+    width: 100%;
+    height:50%;
+}
+.cardtext{
+  position:absolute;
+  text-align:left;
+  padding-left: 1.5rem;
+  line-height: 1rem;
+  padding-top: 1rem;
+  bottom:0;
+  height:85%;
+  width: 100%;
+  background-color: var(--Darkblue);
+  transition: all 0.3s ease-in-out;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 300;
+}
+.cardtext h1{
+    display: inline-block;
+    position: relative;
+    top: 1rem;
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+.cardtext:hover{
+    background-color: var(--Desaturatedblue);
+    height: 87%;
+  }
+
+.cardtext::before{
+    content: url(images/icon-ellipsis.svg);
+    position: absolute;
+    filter:none;
+    top: 0;
+    right: 0;
+    margin: 1.5em;
+    transition: all 0.3s ease-in-out;
+  }
+  .cardtext:hover::before{
+    filter:brightness(150%);
+  }
+
+
