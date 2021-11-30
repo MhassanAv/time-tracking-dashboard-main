@@ -18,6 +18,7 @@
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body{
@@ -52,6 +53,7 @@ body{
 
 .herocard ul li:hover,.herocard ul li:focus{
     color: var(--PaleBlue);
+    user-select: none;
 }
 .hero-avatar{
     width: 100%;
@@ -174,7 +176,7 @@ body{
   height:85%;
   width: 100%;
   background-color: var(--Darkblue);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
   border-radius: 1rem;
   cursor: pointer;
   font-weight: 300;
@@ -194,7 +196,7 @@ body{
 
 }
 
-.cardtext:hover{
+.cardtext:hover,.cardtext:focus,.cardtext:active{
     background-color: var(--Desaturatedblue);
     height: 87%;
   }
@@ -206,7 +208,7 @@ body{
     top: 0;
     right: 0;
     margin: 1.5em;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
   }
   .cardtext:hover::before{
     filter:brightness(150%);
@@ -214,10 +216,10 @@ body{
 
 #time{
     position: absolute;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 /*moblie layout*/
-@media (max-width: 1080px){
+@media only screen and (max-width:375px){
     body{
         width: 100%;
         height:300vh;
