@@ -1,16 +1,16 @@
 // app 
-let c;
+/*let c;
 let y;
 function check(z,d){
 if(d[z].timeframes.weekly.current!==1){
   c="s";
 }else if(d[z].timeframes.weekly.previous!==1){
   y="s";
-}}
+}}*/
 async function getData() {
-  let res = await fetch('/data.json')
+  let res = await fetch('data.json');
   try {
-      return await res.json()
+      return await res.json();
   } catch (error) {
       console.log(error);
   }
@@ -33,15 +33,15 @@ async function p(id) {
   if(lin.innerText==="Daily"){
     let i=0;
     times.forEach((time)=>{
-      check(i,data);
-      time.innerHTML=`<h1>${data[i].timeframes.daily.current}hr${c}</h1><br> <!-- daily --> <p>Yasterday - ${data[i].timeframes.daily.previous}hr${y}</p> <!-- daily --></div>`;
+      /*check(i,data);*/
+      time.innerHTML=`<h1>${data[i].timeframes.daily.current}hr</h1><br> <!-- daily --> <p>Yasterday - ${data[i].timeframes.daily.previous}hr</p> <!-- daily --></div>`;
       i++;
     });
   }else if(lin.innerText==="Weekly"){
     let i=0;
     times.forEach((time)=>{
-      check(i,data);
-      time.innerHTML=`<h1>${data[i].timeframes.weekly.current}hr${c}</h1><br> <!-- weekly --> <p>Last week - ${data[i].timeframes.weekly.previous}hr${y}</p> <!-- weekly --></div>`;
+      /*check(i,data);*/
+      time.innerHTML=`<h1>${data[i].timeframes.weekly.current}hr</h1><br> <!-- weekly --> <p>Last week - ${data[i].timeframes.weekly.previous}hr</p> <!-- weekly --></div>`;
       i++;
       console.log(i);
 
@@ -49,8 +49,8 @@ async function p(id) {
   }else if(lin.innerText==="Monthly"){
     let i=0;
     times.forEach((time)=>{
-      check(i,data);
-      time.innerHTML=`<h1>${data[i].timeframes.monthly.current}hr</h1><br> <!-- monthly --> <p>Last month - ${data[i].timeframes.monthly.previous}hr${y}</p> <!-- daily --></div>`;
+      /*check(i,data);*/
+      time.innerHTML=`<h1>${data[i].timeframes.monthly.current}hr</h1><br> <!-- monthly --> <p>Last month - ${data[i].timeframes.monthly.previous}hr</p> <!-- daily --></div>`;
       i++; 
     });
   }
