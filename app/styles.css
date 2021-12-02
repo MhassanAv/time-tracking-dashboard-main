@@ -40,12 +40,12 @@ body{
 .herocard ul{
     cursor: pointer;
     list-style: none;
-    line-height: 2.5rem;
+    line-height: 3rem;
     color: var(--Desaturatedblue);
 }
 .herocard ul li{
     font-weight: 400;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 .active{
     color: var(--PaleBlue);
@@ -54,6 +54,7 @@ body{
 .herocard ul li:hover,.herocard ul li:focus{
     color: var(--PaleBlue);
     user-select: none;
+    margin-left: 0.6rem;
 }
 .hero-avatar{
     width: 100%;
@@ -94,7 +95,7 @@ body{
     position: absolute;
     grid-template-columns: repeat(4,1fr);
     gap: 1.3rem;
-    width: 75%;
+    width: 80%;
     height: 30rem;
     top: 50%;
     left: 50%;
@@ -197,8 +198,8 @@ body{
 }
 
 .cardtext:hover,.cardtext:focus,.cardtext:active{
-    background-color: var(--Desaturatedblue);
-    height: 87%;
+    background-color: var(--Blue);
+    margin-bottom:0.6rem;
   }
 
 .cardtext::before{
@@ -218,6 +219,27 @@ body{
     position: absolute;
     transition: all 0.3s ease;
 }
+#time p{
+    color: var(--Desaturatedblue);
+}
+.attribution{
+    color: var(--PaleBlue);
+    position: absolute;
+    text-decoration: none;
+    font-size:14px;
+    bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.attribution a{
+    text-decoration: none;
+    color: var(--Desaturatedblue);
+}
+.attribution a:hover,.attribution a:focus{
+    color: var(--Desaturatedblue);
+}
+
 /*moblie layout*/
 @media only screen and (max-width:700px){
     body{
@@ -256,6 +278,9 @@ body{
         align-items: center;
         position: relative;
     }
+    .hero-avatar img{
+        height: 3.2rem;
+    }
     .hero-avatar h3{
         padding: 0;
         width: 100%;
@@ -278,13 +303,20 @@ body{
         align-items: center;
         justify-content: flex-start;
         width: 100%;
+        margin-top: 2rem;
     }
     #time h1{
-        font-size: 40px;
+        font-size: 45px;
     }
     #time p{
+        color:var(--Desaturatedblue);
         position: absolute;
         right: 0rem;
+        margin-top: 1rem;
         
+    }
+    .herocard ul li:hover,.herocard ul li:focus{
+        color: var(--PaleBlue);
+        margin: 0;
     }
 }
