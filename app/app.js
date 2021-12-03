@@ -2,6 +2,7 @@
 let c="";
 let v="";
 let y="";
+//checking the number of hours to add s
 function checkDay(z,d){
 if(d[z].timeframes.daily.current !== 1){
   c="s";
@@ -23,6 +24,7 @@ function checkWeek(z,d){
     if(d[z].timeframes.monthly.previous !== 1){
       v="s";
     }}
+//fetching data from the data.json file
 async function getData() {
   let res = await fetch('data.json');
   try {
@@ -31,6 +33,7 @@ async function getData() {
       console.log(error);
   }
 }
+//onclick function for the links
 async function p(id) {
   let data = await getData();
   try{
