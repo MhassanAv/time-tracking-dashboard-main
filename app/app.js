@@ -1,12 +1,28 @@
 // app 
-/*let c;
-let y;
-function check(z,d){
-if(d[z].timeframes.weekly.current!==1){
+let c="";
+let v="";
+let y="";
+function checkDay(z,d){
+if(d[z].timeframes.daily.current !== 1){
   c="s";
-}else if(d[z].timeframes.weekly.previous!==1){
-  y="s";
-}}*/
+}
+if(d[z].timeframes.daily.previous !== 1){
+  v="s";
+}}
+function checkWeek(z,d){
+  if(d[z].timeframes.weekly.current !== 1){
+    c="s";
+  }
+  if(d[z].timeframes.weekly.previous !== 1){
+    v="s";
+  }}
+  function checkMonth(z,d){
+    if(d[z].timeframes.monthly.current !== 1){
+      c="s";
+    }
+    if(d[z].timeframes.monthly.previous !== 1){
+      v="s";
+    }}
 async function getData() {
   let res = await fetch('data.json');
   try {
@@ -33,25 +49,31 @@ async function p(id) {
   if(lin.innerText==="Daily"){
     let i=0;
     times.forEach((time)=>{
-      /*check(i,data);*/
-      time.innerHTML=`<h1>${data[i].timeframes.daily.current}hr</h1><br> <!-- daily --> <p>Yasterday - ${data[i].timeframes.daily.previous}hr</p> <!-- daily --></div>`;
+      checkDay(i,data);
+      time.innerHTML=`<h1>${data[i].timeframes.daily.current}hr${c}</h1><br> <!-- daily --> <p>Yasterday - ${data[i].timeframes.daily.previous}hr${v}</p> <!-- daily --></div>`;
       i++;
+      c="";
+      v="";
     });
   }else if(lin.innerText==="Weekly"){
     let i=0;
+    y="weekly";
     times.forEach((time)=>{
-      /*check(i,data);*/
-      time.innerHTML=`<h1>${data[i].timeframes.weekly.current}hr</h1><br> <!-- weekly --> <p>Last week - ${data[i].timeframes.weekly.previous}hr</p> <!-- weekly --></div>`;
+      checkWeek(i,data);
+      time.innerHTML=`<h1>${data[i].timeframes.weekly.current}hr${c}</h1><br> <!-- weekly --> <p>Last week - ${data[i].timeframes.weekly.previous}hr${v}</p> <!-- weekly --></div>`;
       i++;
       console.log(i);
-
+      c="";
+      v="";
     }); 
   }else if(lin.innerText==="Monthly"){
     let i=0;
     times.forEach((time)=>{
-      /*check(i,data);*/
-      time.innerHTML=`<h1>${data[i].timeframes.monthly.current}hr</h1><br> <!-- monthly --> <p>Last month - ${data[i].timeframes.monthly.previous}hr</p> <!-- daily --></div>`;
-      i++; 
+      checkMonth(i,data);
+      time.innerHTML=`<h1>${data[i].timeframes.monthly.current}hr${c}</h1><br> <!-- monthly --> <p>Last month - ${data[i].timeframes.monthly.previous}hr${v}</p> <!-- daily --></div>`;
+      i++;
+      c="";
+      v="";
     });
   }
   }catch(error){
