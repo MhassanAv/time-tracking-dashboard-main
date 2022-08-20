@@ -1,4 +1,8 @@
+const jsonData = fetch('data.json').then((data)=>data.json)
+console.log(jsonData);
+
 // app 
+
 let c="";
 let v="";
 let y="";
@@ -24,18 +28,10 @@ function checkWeek(z,d){
     if(d[z].timeframes.monthly.previous !== 1){
       v="s";
     }}
-//fetching data from the data.json file
-async function getData() {
-  let res = await fetch('data.json');
-  try {
-      return res.json();
-  } catch (error) {
-      console.log(error);
-  }
-}
+
 //onclick function for the links
 async function p(id) {
-  let data = await getData();
+  let data = jsonData
   try{
   let lin = document.body.querySelector(id);
   let links = document.querySelectorAll('li');
