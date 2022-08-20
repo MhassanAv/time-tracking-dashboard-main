@@ -28,7 +28,7 @@ function checkWeek(z,d){
 async function getData() {
   let res = await fetch('data.json');
   try {
-      return await res.json();
+      return res.json();
   } catch (error) {
       console.log(error);
   }
